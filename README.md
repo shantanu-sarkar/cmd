@@ -56,3 +56,13 @@ git clone https://github.com/yaap/hardware_qcom-caf_sm8150_audio hardware/qcom-c
 rm -rf hardware/qcom-caf/sm8150/media
 git clone https://github.com/yaap/hardware_qcom-caf_sm8150_media hardware/qcom-caf/sm8150/media/
 ```
+## Gerrit sample command for AEX
+For pushing to gerrit
+```bash
+git push ssh://shantanu-sarkar@gerrit.aospextended.com:29418/AospExtended/* HEAD:refs/for/12.x
+```
+For hook
+```bash
+gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@gerrit.aospextended.com:hooks/commit-msg ${gitdir}/hooks/
+git commit
+```
