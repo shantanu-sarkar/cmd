@@ -45,7 +45,7 @@ export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/mnt/ccache
 make installclean
 croot
-brunch guacamoleb
+brunch guacamoleb | tee log.txt
 ```
 ## Clone YAAP HALs
 ```bash
