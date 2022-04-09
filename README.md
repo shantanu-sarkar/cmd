@@ -66,3 +66,12 @@ For hook
 gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@gerrit.aospextended.com:hooks/commit-msg ${gitdir}/hooks/
 git commit
 ```
+## Gerrit sample command for LOS
+For pushing to gerrit
+```bash
+git push ssh://shantanu-sarkar@review.lineageos.org:29418/LineageOS/* HEAD:refs/for/lineage-19.1
+```
+For hook
+```bash
+gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@review.lineageos.org:hooks/commit-msg ${gitdir}/hooks/
+```
