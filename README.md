@@ -75,3 +75,7 @@ For hook
 ```bash
 gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@review.lineageos.org:hooks/commit-msg ${gitdir}/hooks/
 ```
+No edit
+```bash
+git commit --amend --no-edit
+```
