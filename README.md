@@ -47,6 +47,18 @@ make installclean
 croot
 brunch guacamoleb | tee log.txt
 ```
+# For Pixel Experience
+## Build userdebug + installclean + Alt cache partition
+```bash
+source build/envsetup.sh
+lunch aosp_guacamoleb-userdebug
+sudo mount --bind ~/.cache /mnt/ccache
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/mnt/ccache
+make installclean
+mka bacon -j$(nproc --all) | tee log.txt
+```
 ## Clone YAAP HALs
 ```bash
 rm -rf hardware/qcom-caf/sm8150/display
@@ -55,6 +67,11 @@ rm -rf hardware/qcom-caf/sm8150/audio
 git clone https://github.com/yaap/hardware_qcom-caf_sm8150_audio hardware/qcom-caf/sm8150/audio/
 rm -rf hardware/qcom-caf/sm8150/media
 git clone https://github.com/yaap/hardware_qcom-caf_sm8150_media hardware/qcom-caf/sm8150/media/
+```
+## Sign all commits by default
+```bash
+git config user.signingkey 5D570797CF704721
+git config commit.gpgsign true
 ```
 ## Gerrit sample command for AEX
 For pushing to gerrit
