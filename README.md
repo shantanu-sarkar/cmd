@@ -92,6 +92,15 @@ For hook
 ```bash
 gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@review.lineageos.org:hooks/commit-msg ${gitdir}/hooks/
 ```
+## Gerrit sample command for PE
+For pushing to gerrit
+```bash
+git push ssh://shantanu-sarkar@gerrit.pixelexperience.org:29418/* HEAD:refs/for/twelve-plus
+```
+For hook
+```bash
+gitdir=$(git rev-parse --git-dir); scp -p -P 29418 shantanu-sarkar@gerrit.pixelexperience.org:hooks/commit-msg ${gitdir}/hooks/
+```
 No edit
 ```bash
 git commit --amend --no-edit
