@@ -68,9 +68,14 @@ git clone https://github.com/yaap/hardware_qcom-caf_sm8150_audio hardware/qcom-c
 rm -rf hardware/qcom-caf/sm8150/media
 git clone https://github.com/yaap/hardware_qcom-caf_sm8150_media hardware/qcom-caf/sm8150/media/
 ```
-## Sign all commits by default
+## Sign all commits by default (Windows)
 ```bash
 git config user.signingkey 5D570797CF704721
+git config commit.gpgsign true
+```
+## Sign all commits by default (WSL)
+```bash
+git config user.signingkey 7D85D86F7CA9A82D
 git config commit.gpgsign true
 ```
 ## Gerrit sample command for AEX
