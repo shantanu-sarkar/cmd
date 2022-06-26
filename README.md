@@ -51,7 +51,7 @@ brunch guacamoleb | tee log.txt
 ## Build userdebug + installclean + Alt cache partition
 ```bash
 source build/envsetup.sh
-lunch aosp_guacamoleb-userdebug
+lunch aosp_guacamoleb-user
 sudo mount --bind ~/.cache /mnt/ccache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -71,11 +71,6 @@ git clone https://github.com/yaap/hardware_qcom-caf_sm8150_media hardware/qcom-c
 ## Sign all commits by default (Windows)
 ```bash
 git config user.signingkey 5D570797CF704721
-git config commit.gpgsign true
-```
-## Sign all commits by default (WSL)
-```bash
-git config user.signingkey 7D85D86F7CA9A82D
 git config commit.gpgsign true
 ```
 ## Gerrit sample command for AEX
