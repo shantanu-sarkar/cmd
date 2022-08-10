@@ -10,7 +10,7 @@ sudo mkdir /mnt/ccache
 ccache -M 50G -F 0
 ```
 # For LineageOS
-## installclean + ALt cache partition
+## Dirty build
 ```bash
 source build/envsetup.sh
 breakfast guacamoleb
@@ -21,10 +21,33 @@ export CCACHE_DIR=/mnt/ccache
 croot
 brunch guacamoleb | tee log.txt
 ```
-# For Pixel Experience
-## Build userdebug + installclean + Alt cache partition
+## Installclean
 ```bash
 source build/envsetup.sh
+make installclean
+breakfast guacamoleb
+sudo mount --bind ~/.cache /mnt/ccache
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/mnt/ccache
+croot
+brunch guacamoleb | tee log.txt
+```
+# For Pixel Experience
+## Dirty Build
+```bash
+source build/envsetup.sh
+lunch aosp_guacamoleb-user
+sudo mount --bind ~/.cache /mnt/ccache
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/mnt/ccache
+mka bacon -j$(nproc --all) | tee log.txt
+```
+## Installclean
+```bash
+source build/envsetup.sh
+make installclean
 lunch aosp_guacamoleb-user
 sudo mount --bind ~/.cache /mnt/ccache
 export USE_CCACHE=1
