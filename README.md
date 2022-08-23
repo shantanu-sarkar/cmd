@@ -37,7 +37,7 @@ brunch guacamoleb | tee log.txt
 ## Dirty Build
 ```bash
 source build/envsetup.sh
-lunch aosp_guacamoleb-user
+lunch aosp_guacamoleb-userdebug
 sudo mount --bind ~/.cache /mnt/ccache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -48,7 +48,7 @@ mka bacon -j$(nproc --all) | tee log.txt
 ```bash
 source build/envsetup.sh
 make installclean
-lunch aosp_guacamoleb-user
+lunch aosp_guacamoleb-userdebug
 sudo mount --bind ~/.cache /mnt/ccache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
