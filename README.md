@@ -57,7 +57,7 @@ mka bacon -j$(nproc --all) | tee log.txt
 ```
 ## Sign all commits by default (Windows)
 ```bash
-git config user.signingkey 5D570797CF704721
+git config user.signingkey 19397B5E65EA2AAC
 git config commit.gpgsign true
 ```
 ## Gerrit sample command for LOS
