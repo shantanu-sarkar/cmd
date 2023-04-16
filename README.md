@@ -7,10 +7,10 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```bash
 source build/envsetup.sh
 lunch aosp_guacamoleb-userdebug
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 mka bacon -j$(nproc --all) | tee log.txt
 ```
 ## Installclean
@@ -18,20 +18,20 @@ mka bacon -j$(nproc --all) | tee log.txt
 source build/envsetup.sh
 make installclean
 lunch aosp_guacamoleb-userdebug
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 mka bacon -j$(nproc --all) | tee log.txt
 ```
 ## For Kernel
 ```bash
 source build/envsetup.sh
 lunch aosp_guacamoleb-userdebug
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 make bootimage -j$(nproc --all) | tee log.txt
 ```
 # For LineageOS
@@ -39,10 +39,10 @@ make bootimage -j$(nproc --all) | tee log.txt
 ```bash
 source build/envsetup.sh
 breakfast guacamoleb
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 croot
 brunch guacamoleb | tee log.txt
 ```
@@ -51,10 +51,10 @@ brunch guacamoleb | tee log.txt
 source build/envsetup.sh
 make installclean
 breakfast guacamoleb
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 croot
 brunch guacamoleb | tee log.txt
 ```
@@ -62,10 +62,10 @@ brunch guacamoleb | tee log.txt
 ```bash
 source build/envsetup.sh
 breakfast guacamoleb
-sudo mount --bind ~/.cache /mnt/ccache
+sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/mnt/ccache
+export CCACHE_DIR=/mnt/cache
 croot
 make bootimage -j$(nproc --all) | tee log.txt
 ```
