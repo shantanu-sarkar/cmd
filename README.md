@@ -110,7 +110,7 @@ git config --global review.gerrit.pixelexperience.org.username "shantanu-sarkar"
 ```
 ## Initial Alt cache partition commands
 ```bash
-sudo mkdir /mnt/ccache
+sudo mkdir /mnt/cache
 ```
 ```bash
 ccache -M 75G -F 0
