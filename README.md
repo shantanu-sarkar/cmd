@@ -1,12 +1,12 @@
-## Force sync ROM
+## Force Sync ROM
 ```bash
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
-# For Pixel Experience
+# For Pixel OS
 ## Dirty Build
 ```bash
 source build/envsetup.sh
-lunch aosp_guacamoleb-userdebug
+lunch aosp_guacamoleb-ap4a-userdebug
 sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -17,7 +17,7 @@ mka bacon -j$(nproc --all) | tee log.txt
 ```bash
 source build/envsetup.sh
 make installclean
-lunch aosp_guacamoleb-userdebug
+lunch aosp_guacamoleb-ap4a-userdebug
 sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -27,7 +27,7 @@ mka bacon -j$(nproc --all) | tee log.txt
 ## For Kernel
 ```bash
 source build/envsetup.sh
-lunch aosp_guacamoleb-userdebug
+lunch aosp_guacamoleb-ap4a-userdebug
 sudo mount --bind ~/.cache /mnt/cache
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
